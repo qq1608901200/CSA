@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesium测试</title>
+    <!-- 引用cesium的js文件和css文件 -->
+    <script src="./libs/Cesium/Cesium.js"></script>
+    <link rel="stylesheet" href="./libs/Cesium/Widgets/widgets.css">
+<!-- 引用jquery -->
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<!--引用缓冲区库 -->
+<script src="./Cesium功能源码/cesium-graphicBuffer-main/cesium-graphicBuffer-main/src/turf.min.js"></script>
+<script src="./Cesium功能源码/cesium-graphicBuffer-main/cesium-graphicBuffer-main/src/cesium-graphicBuffer.js"></script>
+<!-- 引用可视域库 -->
+<script src="./Cesium功能源码/cesium-viewshed-main/cesium-viewshed-main/src/cesium-viewshed.js"></script>
+<!-- 可视域分析 -->
+<script src="./Cesium功能源码/功能模块/1.1 可视域分析.js"></script>
+<!-- 缓冲区分析 -->
+<script src="./Cesium功能源码//功能模块/1.2 缓冲区分析.js"></script>
+<!-- 淹没分析 -->
+<script src="./Cesium功能源码/功能模块/1.3淹没分析.js"></script>
+<script src="./Cesium功能源码//功能模块/淹没分析test.js"> </script>
+<!-- 引用最短路径分析 -->
+<script src="./Cesium功能源码/功能模块/1.4 最短路径分析.js"></script>
+<!-- 坡度分析 -->
+<script src="./Cesium功能源码/功能模块/SlopeAnalysis.js"></script>
+<!--引用热力图  -->
+<!-- <script src="./Cesium功能源码/功能模块/CesiumHeat.js"> </script>
+<script src="./src/data/last-all-airbox.js"></script> -->
+    <style>
+        html,body{
+            margin: 0%;
+            padding: 0%;
+        }
+        .btn-container {
+            position: absolute;
+            left: 10px;
+            top: 90px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px solid rgba(128, 128, 128, 0.5);
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 3px 14px rgb(128 128 128 / 50%);
+            max-width: 380px;
+        }
+        
+        button {
+            background: transparent;
+            border: 1px solid #00d0ffb8;
+            color: white;
+            padding: 7px 9px;
+            border-radius: 2px;
+            margin: 3px;
+            cursor: pointer
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="cesiumContainer"></div>
+    <div class="btn-container">
+        <button onclick="enterKeyBoardMouseRoamingMode()">漫游模式</button>
+        <button onclick="exitKeyBoardMouseRoamingMode()">退出漫游模式</button>
+        <button onclick="start_line()">距离测量</button>
+        <button onclick="start_polygon()">面积测量</button>
+        <button onclick="point_buffer()">创建点缓冲</button>
+    <button onclick="polyline_buffer()">创建线缓冲</button>
+    <button onclick="polygon_buffer()">创建面缓冲</button>
+    <button onclick="animation()">动画</button>
+    <button onclick="add_terrain()">添加地形特征</button>
+    <button onclick="close_terrain()">关闭地形特征</button>
+        <button onclick="close_all()">清除</button>
+        <button onclick="add_ElevationLine()">添加等高线</button>
+        <button onclick="remove_ElevationLine()">删除等高线</button>
+        <button onclick="slopeAnalysis()">坡度分析</button>
+        <button onclick="AltitudeTrend()">海拔走势</button>
+        <div class="iput-container">
+            <!-- <label for="">输入目标淹没高度</label> -->
+            <p>淹没高度：<input type="range" name="float_value" id="float_value"   max="500" min="0"  /></p>
+        </div>
+        <button onclick="show_floated()">淹没分析</button>
+        <button onclick="polygon_test()">淹没分析测试</button>
+        <button onclick="add3Dtiles()">添加3Dtiles模型</button>
+        <button onclick="setvisible('add')">添加可视域</button>
+    <button onclick="setvisible('remove')">删除可视域</button>
+    <button onclick="get_shortage_path()">最短路径</button>
+
+        
+
+    </div>
+    <!-- <button id="claear"></button> --> 
+    <!-- <script src="./app.js"></script> -->
+    <!-- <script src="./3.1 组件重写.js"></script> -->
+    <!-- <script src="./3.2 事件应用.js"></script> -->
+    <!-- <script src="./3.3相机控制.js"></script> -->
+    <script src="./index.js"></script>
+    <!-- <script src="./4.加载gltf模型.js"></script> -->
+    <!-- <script src="./2.1 加载3Dtiles.js"></script> -->
+    <!-- <script src="./4.1空间数据可视化之Primitive.js"> </script> -->
+    <!-- <script src="./4.2空间数据可视化至entity.js"> </script> -->
+    <!-- <script src="./3.5 可视域分析.js"></script> -->
+    <!-- <script src="./4.3 最短路径分析.js"></script> -->
+
+</body>
+</html>
